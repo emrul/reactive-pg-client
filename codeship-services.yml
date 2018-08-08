@@ -1,0 +1,10 @@
+reactive-pg-client:
+  build:
+    image: vietj/reactive-pg-client
+    dockerfile: Dockerfile
+  depends_on:
+    - postgres
+  environment:
+    - DATABASE_URL=postgres://postgres@postgres/test
+postgres:
+  image: healthcheck/postgres:alpine
